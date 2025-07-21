@@ -7,11 +7,19 @@ vim.keymap.set("n", "<leader>fw", ":Telescope grep_string<cr>", {desc='[F]ind [W
 vim.keymap.set("n", "<leader>fb", ":Telescope buffers<cr>", {desc='[F]ind [B]uffer'})
 
 -- bufferline
-vim.keymap.set("n", "<leader>n", ":bn<cr>")
-vim.keymap.set("n", "<leader>p", ":bp<cr>")
+vim.keymap.set("n", "<leader>k", ":bn<cr>")
+vim.keymap.set("n", "<leader>j", ":bp<cr>")
 vim.keymap.set("n", "<leader>x", ":bd<cr>")
 
 -- tree
 vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<cr>")
 vim.keymap.set("n", "<leader>tr", ":NvimTreeRefresh<cr>")
 vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<cr>")
+
+-- vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+--   pattern = "*.lua",
+--   callback = function() vim.cmd.NvimTreeClose() end
+-- })
+
+-- LSP
+vim.keymap.set("n", "<leader>F", function() vim.lsp.buf.formatting() end)
