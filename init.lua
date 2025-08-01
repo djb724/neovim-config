@@ -1,5 +1,5 @@
-require("keymaps")
 require("options")
+require("keymaps")
 require("plugins.lazy")
 require("plugins.keymaps")
 require("color")

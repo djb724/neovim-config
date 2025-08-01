@@ -58,7 +58,3 @@ vim.keymap.set("v", '<leader>/', 'gcc')
 
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
-
--- jump to start/end of word and enter insert mode
-vim.keymap.set("n", '<C-a>', 'ea')
-vim.keymap.set("n", '<C-i>', 'bi')

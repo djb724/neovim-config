@@ -152,7 +152,6 @@ require('lazy').setup({
 
       require('mason-lspconfig').setup({
         ensure_installed = {
-          'pyright',  -- python
           'ts_ls', -- js, ts
         },
         handlers = {
@@ -165,17 +164,17 @@ require('lazy').setup({
         }
       })
 
-      -- Python environment
-      local util = require("lspconfig/util")
-      local path = util.path
-      require('lspconfig').pyright.setup {
-        on_attach = on_attach,
-        capabilities = capabilities,
-        -- before_init = function(_, config)
-          -- default_venv_path = path.join(vim.env.HOME, "virtualenvs", "nvim-venv", "bin", "python")
-        --   config.settings.python.pythonPath = default_venv_path
-        -- end,
-      }
+      -- -- Python environment
+      -- local util = require("lspconfig/util")
+      -- local path = util.path
+      -- require('lspconfig').pyright.setup {
+      --   on_attach = on_attach,
+      --   capabilities = capabilities,
+      --   -- before_init = function(_, config)
+      --     -- default_venv_path = path.join(vim.env.HOME, "virtualenvs", "nvim-venv", "bin", "python")
+      --   --   config.settings.python.pythonPath = default_venv_path
+      --   -- end,
+      -- }
     end
   },
   {
@@ -195,4 +194,3 @@ require('lazy').setup({
     end
   }
 })
-

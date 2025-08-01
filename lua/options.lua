@@ -102,3 +102,24 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave" }, {
+  pattern = "*",
+  callback = function()
+    if vim.bo.filetype ~= "" then
+      vim.cmd("silent! write")
+    end
+  end,
+})
+
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+  -- pattern = {"*.py", "*.yaml"},
+  pattern = {"*"},
+  callback = function()
+    if vim.bo.filetype == "python" then
+      vim.wo.foldmethod = "indent"
+    else
+      vim.wo.foldmethod = "manual"
+    end
+  end
+})
